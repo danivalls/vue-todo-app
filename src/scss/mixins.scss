@@ -1,0 +1,27 @@
+@mixin apply-button-type-styling($color) {
+  background-color: $color;
+  background: linear-gradient(
+    to bottom left,
+    $color 30%,
+    lighten($color, 15%) 100%
+  );
+  transition: all 0.25s ease-out;
+
+  &:active {
+    filter: brightness(0.8);
+  }
+
+  &:not([disabled]):not(:active):hover {
+    filter: brightness(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    filter: saturate(30%);
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 3px transparentize($color, 0.7);
+  }
+}

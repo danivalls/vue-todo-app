@@ -1,28 +1,63 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <ui-button label="Button" @click="onClick" :disabled="check" />
+
+    <ui-checkbox v-model="check" />
+
+    <ui-input
+      v-model="inputValue"
+      placeholder="Item a añadir..."
+      :disabled="check"
+      @enter="inputValue = undefined"
+    >
+      <ui-button
+        label="Añadir"
+        type="negative"
+        @click="inputValue = undefined"
+        :disabled="!inputValue"
+      />
+    </ui-input>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import uiButton from "@/components/ui/uiButton";
+import uiCheckbox from "@/components/ui/uiCheckbox";
+import uiInput from "@/components/ui/uiInput";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    uiButton,
+    uiCheckbox,
+    uiInput
+  },
+
+  data() {
+    return {
+      check: false,
+      inputValue: undefined
+    };
+  },
+
+  methods: {
+    onClick(e) {
+      console.log("click", e);
+    }
   }
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: $secondary;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
 }
 </style>

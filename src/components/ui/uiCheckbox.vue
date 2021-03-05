@@ -23,6 +23,7 @@
 
 <script>
 export default {
+  name: "ui-checkbox",
   props: {
     value: {
       type: Boolean,
@@ -75,6 +76,7 @@ export default {
     width: 0;
     color: $primary;
     transition: all 0.3s ease-in-out;
+    pointer-events: none;
 
     &--checked {
       width: 1rem;

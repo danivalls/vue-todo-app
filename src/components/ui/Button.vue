@@ -2,7 +2,7 @@
   <button
     class="ui-button"
     :class="uiButtonDynamicClass"
-    :disabled="disable"
+    :disabled="disabled"
     @click="event => $emit('click', event)"
   >
     {{ label }}
@@ -17,7 +17,7 @@ export default {
       default: "primary"
     },
 
-    disable: {
+    disabled: {
       type: Boolean,
       default: false
     },
@@ -44,6 +44,7 @@ export default {
   color: white;
   cursor: pointer;
   outline: none;
+  user-select: none;
 
   &.ui-button--primary {
     @include apply-button-type-styling($primary);

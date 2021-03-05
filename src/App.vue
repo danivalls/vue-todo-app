@@ -1,26 +1,42 @@
 <template>
   <div id="app">
-    <Button label="Button" @click="onClick" :disabled="disableButton" />
+    <ui-button label="Button" @click="onClick" :disabled="check" />
 
-    <Checkbox v-model="check" />
+    <ui-checkbox v-model="check" />
+
+    <ui-input
+      v-model="inputValue"
+      placeholder="Item a añadir..."
+      :disabled="check"
+      @enter="inputValue = undefined"
+    >
+      <ui-button
+        label="Añadir"
+        type="negative"
+        @click="inputValue = undefined"
+        :disabled="!inputValue"
+      />
+    </ui-input>
   </div>
 </template>
 
 <script>
-import Button from "@/components/ui/Button";
-import Checkbox from "@/components/ui/Checkbox";
+import uiButton from "@/components/ui/uiButton";
+import uiCheckbox from "@/components/ui/uiCheckbox";
+import uiInput from "@/components/ui/uiInput";
 
 export default {
   name: "App",
   components: {
-    Button,
-    Checkbox
+    uiButton,
+    uiCheckbox,
+    uiInput
   },
 
   data() {
     return {
-      disableButton: false,
-      check: false
+      check: false,
+      inputValue: undefined
     };
   },
 

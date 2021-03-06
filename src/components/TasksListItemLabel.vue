@@ -9,12 +9,14 @@
     <div
       class="item-label-line"
       :class="{ 'item-label-line--active': linethrough }"
-    ></div>
+    />
   </div>
 </template>
 
 <script>
 export default {
+  name: "TasksListItemLabel",
+
   props: {
     label: {
       type: String,

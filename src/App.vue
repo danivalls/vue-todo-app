@@ -5,6 +5,7 @@
     </div>
     <div class="card tasks-list-card">
       <tasks-list />
+      <clear-completed-tasks-button />
     </div>
   </div>
 </template>
@@ -12,13 +13,15 @@
 <script>
 import AddTaskInput from "@/components/AddTaskInput";
 import TasksList from "@/components/TasksList";
+import ClearCompletedTasksButton from "@/components/ClearCompletedTasksButton";
 
 export default {
   name: "App",
 
   components: {
     AddTaskInput,
-    TasksList
+    TasksList,
+    ClearCompletedTasksButton
   }
 };
 </script>

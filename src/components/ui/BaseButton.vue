@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "ui-button",
+  name: "BaseButton",
   props: {
     type: {
       type: String,

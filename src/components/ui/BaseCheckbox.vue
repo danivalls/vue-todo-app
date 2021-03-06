@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "ui-checkbox",
+  name: "BaseCheckbox",
   props: {
     value: {
       type: Boolean,

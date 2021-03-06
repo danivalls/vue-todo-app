@@ -15,7 +15,12 @@ npm run serve
 npm run build
 ```
 
-### Run your unit tests
+### Serves compilation using node.js server (Required during Heroku deploy)
+```
+npm run start
+```
+
+### Run unit tests
 ```
 npm run test:unit
 ```
@@ -24,6 +29,3 @@ npm run test:unit
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -66,6 +66,7 @@ export default {
     background-color: transparent;
     border: none;
     outline: none;
+    min-width: 75px;
   }
 }
 </style>

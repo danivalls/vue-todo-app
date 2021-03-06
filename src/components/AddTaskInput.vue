@@ -26,16 +26,17 @@ export default {
     };
   },
 
-  computed: {
-    newTask() {
-      return { checked: false, name: this.taskName };
-    }
-  },
-
   methods: {
     onAddTask() {
-      this.$emit("newTask", this.newTask);
-      this.taskName = undefined;
+      this.$store
+        .dispatch("addTask", {
+          id: Date.now(),
+          checked: false,
+          name: this.taskName
+        })
+        .then(() => {
+          this.taskName = undefined;
+        });
     }
   }
 };

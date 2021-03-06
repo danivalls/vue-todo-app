@@ -12,6 +12,7 @@
 <script>
 import BaseInput from "./ui/BaseInput";
 import BaseButton from "./ui/BaseButton";
+import { saveListToLocalStorage } from "@/utils/localStorageManager";
 
 export default {
   name: "AddTaskInput",
@@ -43,6 +44,7 @@ export default {
           })
           .then(() => {
             this.taskName = undefined;
+            saveListToLocalStorage();
           });
       }
     }

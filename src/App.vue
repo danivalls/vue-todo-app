@@ -14,6 +14,7 @@
 import AddTaskInput from "@/components/AddTaskInput";
 import TasksList from "@/components/TasksList";
 import ClearCompletedTasksButton from "@/components/ClearCompletedTasksButton";
+import { loadListFromLocalStorage } from "@/utils/localStorageManager";
 
 export default {
   name: "App",
@@ -22,6 +23,10 @@ export default {
     AddTaskInput,
     TasksList,
     ClearCompletedTasksButton
+  },
+
+  beforeMount() {
+    loadListFromLocalStorage();
   }
 };
 </script>

@@ -2,10 +2,9 @@
   <div class="tasks-list-wrapper">
     <tasks-list-no-items v-if="listIsEmpty" />
     <tasks-list-item
-      v-for="(item, index) in items"
-      :key="`list-item-${index}`"
-      :task="item"
-      :taskIndex="index"
+      v-for="task in tasks"
+      :key="`list-item-${task.id}`"
+      :task="task"
     />
   </div>
 </template>
@@ -22,16 +21,13 @@ export default {
     TasksListItem
   },
 
-  props: {
-    items: {
-      type: Array,
-      default: () => []
-    }
-  },
-
   computed: {
+    tasks() {
+      return this.$store.getters.getTasks;
+    },
+
     listIsEmpty() {
-      return !this.items.length;
+      return !this.tasks.length;
     }
   }
 };

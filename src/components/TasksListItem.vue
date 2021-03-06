@@ -17,17 +17,14 @@ export default {
     task: {
       type: Object,
       required: true
-    },
-
-    taskIndex: {
-      type: Number,
-      required: true
     }
   },
 
   methods: {
     onTaskStatusChange(newState) {
-      // TODO dispatch store action
+      const newTask = { ...this.task, checked: newState };
+
+      this.$store.dispatch("updateTaskState", newTask);
     }
   }
 };

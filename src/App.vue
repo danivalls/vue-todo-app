@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="card task-input-card">
-      <add-task-input @newTask="onNewTask" />
+      <add-task-input />
     </div>
     <div class="card tasks-list-card">
-      <tasks-list :items="tasksList" />
+      <tasks-list />
     </div>
   </div>
 </template>
@@ -19,18 +19,6 @@ export default {
   components: {
     AddTaskInput,
     TasksList
-  },
-
-  data() {
-    return {
-      tasksList: []
-    };
-  },
-
-  methods: {
-    onNewTask(task) {
-      this.tasksList.push(task);
-    }
   }
 };
 </script>

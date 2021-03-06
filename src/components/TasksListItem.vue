@@ -23,9 +23,10 @@ export default {
 
   methods: {
     onTaskStatusChange(newState) {
-      const newTask = { ...this.task, checked: newState };
-
-      this.$store.dispatch("updateTaskState", newTask);
+      this.$store.dispatch("updateTaskState", {
+        ...this.task,
+        checked: newState
+      });
     }
   }
 };
@@ -38,5 +39,8 @@ export default {
   grid-template-columns: auto 1fr;
   align-items: center;
   column-gap: 15px;
+  animation-name: "slide-in-right";
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0, 0.35, 0.45, 1);
 }
 </style>

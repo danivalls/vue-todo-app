@@ -47,19 +47,19 @@ export default {
   outline: none;
   user-select: none;
 
-  &.ui-button--primary {
+  &--primary {
     @include apply-button-type-styling($primary);
   }
 
-  &.ui-button--secondary {
+  &--secondary {
     @include apply-button-type-styling($secondary);
   }
 
-  &.ui-button--negative {
+  &--negative {
     @include apply-button-type-styling($negative);
   }
 
-  &.ui-button--warning {
+  &--warning {
     @include apply-button-type-styling($warning);
   }
 }

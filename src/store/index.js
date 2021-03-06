@@ -25,6 +25,10 @@ export default new Vuex.Store({
 
     mutateAddTask(state, task) {
       state.tasks.push(task);
+    },
+
+    mutateClearCompletedTasks(state) {
+      state.tasks = state.tasks.filter(({ checked }) => !checked);
     }
   },
 
@@ -39,6 +43,10 @@ export default new Vuex.Store({
 
     updateTaskState({ commit }, task) {
       commit("mutateTaskState", task);
+    },
+
+    clearListOfCompletedTasks({ commit }) {
+      commit("mutateClearCompletedTasks");
     }
   }
 });

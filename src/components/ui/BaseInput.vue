@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "ui-input",
+  name: "BaseInput",
   props: {
     value: {
       type: String

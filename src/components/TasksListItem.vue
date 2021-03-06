@@ -1,17 +1,18 @@
 <template>
   <div class="tasks-list-item">
     <base-checkbox :value="task.checked" @input="onTaskStatusChange" />
-    <div class="label">{{ task.name }}</div>
+    <tasks-list-item-label :label="task.name" :linethrough="task.checked" />
   </div>
 </template>
 
 <script>
 import BaseCheckbox from "./ui/BaseCheckbox";
+import TasksListItemLabel from "./TasksListItemLabel";
 
 export default {
   name: "TasksListItem",
 
-  components: { BaseCheckbox },
+  components: { BaseCheckbox, TasksListItemLabel },
 
   props: {
     task: {

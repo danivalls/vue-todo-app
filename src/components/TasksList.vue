@@ -3,6 +3,7 @@
     <tasks-list-no-items v-if="listIsEmpty" />
     <tasks-list-item
       v-for="task in tasks"
+      class="list-item"
       :key="`list-item-${task.id}`"
       :task="task"
     />
@@ -33,4 +34,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.tasks-list-wrapper {
+  .list-item {
+    margin-bottom: 10px;
+  }
+}
+</style>

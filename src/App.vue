@@ -1,36 +1,16 @@
 <template>
   <div id="app">
-    <ui-button label="Button" @click="onClick" :disabled="check" />
-
-    <ui-checkbox v-model="check" />
-
-    <ui-input
-      v-model="inputValue"
-      placeholder="Item a añadir..."
-      :disabled="check"
-      @enter="inputValue = undefined"
-    >
-      <ui-button
-        label="Añadir"
-        type="negative"
-        @click="inputValue = undefined"
-        :disabled="!inputValue"
-      />
-    </ui-input>
+    <add-task-input />
   </div>
 </template>
 
 <script>
-import uiButton from "@/components/ui/uiButton";
-import uiCheckbox from "@/components/ui/uiCheckbox";
-import uiInput from "@/components/ui/uiInput";
+import AddTaskInput from "@/components/AddTaskInput";
 
 export default {
   name: "App",
   components: {
-    uiButton,
-    uiCheckbox,
-    uiInput
+    AddTaskInput
   },
 
   data() {

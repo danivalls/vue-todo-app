@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <add-task-input />
+    <div class="card task-input-card">
+      <add-task-input />
+    </div>
+    <div class="card tasks-list-card">
+      <tasks-list />
+    </div>
   </div>
 </template>
 
 <script>
 import AddTaskInput from "@/components/AddTaskInput";
+import TasksList from "@/components/TasksList";
 
 export default {
   name: "App",
   components: {
-    AddTaskInput
+    AddTaskInput,
+    TasksList
   },
 
   data() {
@@ -18,12 +25,6 @@ export default {
       check: false,
       inputValue: undefined
     };
-  },
-
-  methods: {
-    onClick(e) {
-      console.log("click", e);
-    }
   }
 };
 </script>
@@ -36,8 +37,16 @@ export default {
   color: $secondary;
   height: 100vh;
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
-  column-gap: 15px;
+  row-gap: 15px;
+
+  .card {
+    width: 300px;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 0 20px 10px $gray;
+  }
 }
 </style>

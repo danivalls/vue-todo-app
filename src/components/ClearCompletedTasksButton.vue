@@ -10,6 +10,7 @@
 
 <script>
 import BaseButton from "@/components/ui/BaseButton";
+import { saveListToLocalStorage } from "@/utils/localStorageManager";
 
 export default {
   name: "ClearCompletedTasksButton",
@@ -34,7 +35,9 @@ export default {
 
   methods: {
     clearList() {
-      this.$store.dispatch("clearListOfCompletedTasks");
+      this.$store.dispatch("clearListOfCompletedTasks").then(() => {
+        saveListToLocalStorage();
+      });
     }
   }
 };

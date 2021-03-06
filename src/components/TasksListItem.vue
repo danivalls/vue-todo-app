@@ -8,6 +8,7 @@
 <script>
 import BaseCheckbox from "./ui/BaseCheckbox";
 import TasksListItemLabel from "./TasksListItemLabel";
+import { saveListToLocalStorage } from "@/utils/localStorageManager";
 
 export default {
   name: "TasksListItem",
@@ -23,10 +24,14 @@ export default {
 
   methods: {
     onTaskStatusChange(newState) {
-      this.$store.dispatch("updateTaskState", {
-        ...this.task,
-        checked: newState
-      });
+      this.$store
+        .dispatch("updateTaskState", {
+          ...this.task,
+          checked: newState
+        })
+        .then(() => {
+          saveListToLocalStorage();
+        });
     }
   }
 };

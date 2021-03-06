@@ -3,7 +3,7 @@
     <base-button
       label="Añadir"
       type="negative"
-      :disabled="!taskName"
+      :disabled="!validTaskName"
       @click="onAddTask"
     />
   </base-input>
@@ -26,17 +26,25 @@ export default {
     };
   },
 
+  computed: {
+    validTaskName() {
+      return Boolean(this.taskName?.trim());
+    }
+  },
+
   methods: {
     onAddTask() {
-      this.$store
-        .dispatch("addTask", {
-          id: Date.now(),
-          checked: false,
-          name: this.taskName
-        })
-        .then(() => {
-          this.taskName = undefined;
-        });
+      if (this.validTaskName) {
+        this.$store
+          .dispatch("addTask", {
+            id: Date.now(),
+            checked: false,
+            name: this.taskName
+          })
+          .then(() => {
+            this.taskName = undefined;
+          });
+      }
     }
   }
 };

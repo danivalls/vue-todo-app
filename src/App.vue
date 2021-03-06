@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <the-add-task-input />
+    <add-task-input />
   </div>
 </template>
 
 <script>
-import TheAddTaskInput from "@/components/TheAddTaskInput";
+import AddTaskInput from "@/components/AddTaskInput";
 
 export default {
   name: "App",
   components: {
-    TheAddTaskInput
+    AddTaskInput
   },
 
   data() {

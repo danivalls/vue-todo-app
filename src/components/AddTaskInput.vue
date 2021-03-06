@@ -1,25 +1,23 @@
 <template>
-  <div>
-    <ui-input v-model="taskName" placeholder="Nueva tarea" @enter="onAddTask">
-      <ui-button
-        label="Añadir"
-        type="negative"
-        :disabled="!taskName"
-        @click="onAddTask"
-      />
-    </ui-input>
-  </div>
+  <base-input v-model="taskName" placeholder="Nueva tarea" @enter="onAddTask">
+    <base-button
+      label="Añadir"
+      type="negative"
+      :disabled="!taskName"
+      @click="onAddTask"
+    />
+  </base-input>
 </template>
 
 <script>
-import uiInput from "./ui/uiInput";
-import uiButton from "./ui/uiButton";
+import BaseInput from "./ui/BaseInput";
+import BaseButton from "./ui/BaseButton";
 
 export default {
-  name: "TheAddTaskInput",
+  name: "AddTaskInput",
   components: {
-    uiInput,
-    uiButton
+    BaseInput,
+    BaseButton
   },
 
   data() {

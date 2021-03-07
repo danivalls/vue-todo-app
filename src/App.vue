@@ -37,17 +37,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $secondary;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  padding: 30px;
-  row-gap: 15px;
 
   .card {
     width: 300px;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 0 20px 10px $gray;
+    padding: 10px 15px;
+    margin: 30px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 5px $gray;
     &.tasks-list-card {
       .tasks-list {
         max-height: 600px;

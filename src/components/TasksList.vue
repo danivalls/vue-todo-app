@@ -36,8 +36,9 @@ export default {
 
 <style lang="scss" scoped>
 .tasks-list-wrapper {
-  .list-item:not(:last-child) {
-    margin-bottom: 10px;
+  .list-item {
+    border-bottom: 1px solid $gray;
+    padding: 10px 0;
   }
 }
 </style>
